@@ -1,10 +1,12 @@
-package domain.accessing;
+package org.bitpacker.domain;
 
-public class BitAccess extends BitAccessBase {
+public class BitPacker extends BitAccessBase {
 	
-	public BitAccess(byte[] bytes, int bitTotal) {
+	public BitPacker(byte[] bytes, int bitTotal) {
 		super(bytes, bitTotal);
 	}
+	
+	public BitPacker() {super();}
 	
 	@Override public boolean currentEquals1()  {
 		return ((bytes[currentByte] >> (7 - currentBit)) & 1) == 1;
@@ -18,7 +20,7 @@ public class BitAccess extends BitAccessBase {
 	
 	public static String prettyPrint(byte[] result) {
 		StringBuilder sb = new StringBuilder();
-		BitAccess ba = new BitAccess(result, 8 * result.length);
+		BitPacker ba = new BitPacker(result, 8 * result.length);
 		while(ba.hasNext()) {
 			sb.append(ba).append("\n");
 		}

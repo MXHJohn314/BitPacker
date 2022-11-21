@@ -1,9 +1,15 @@
-package domain.accessing;
+package org.bitpacker.domain;
+
+import org.bitpacker.interfaces.BitAccessible;
 
 public abstract class BitAccessBase implements BitAccessible {
 	public BitAccessBase(byte[] bytes, int numbBits) {
 		this.bytes = bytes;
 		this.lastBit = numbBits;
+	}
+	
+	public BitAccessBase() {
+		
 	}
 	
 	abstract public boolean currentEquals1();

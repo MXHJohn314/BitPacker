@@ -1,4 +1,4 @@
-package models;
+package org.bitpacker.domain.models;
 
 public class Point {
 	public int left;

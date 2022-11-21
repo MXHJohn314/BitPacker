@@ -1,4 +1,4 @@
-package domain.accessing;
+package org.bitpacker.interfaces;
 
 import jdk.jshell.spi.ExecutionControl;
 
@@ -16,6 +16,5 @@ public interface BitAccessible {
 	byte[] getAllBytes();
 	
 	int[] indices();
-	
 }
 

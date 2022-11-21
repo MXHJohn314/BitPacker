@@ -1,8 +1,4 @@
-package models;
-
-import domain.accessing.BitAccess;
-import domain.packing.BitPackable;
-import jdk.jshell.spi.ExecutionControl;
+package org.bitpacker.domain.models;
 
 import java.util.List;
 import java.util.Map;
