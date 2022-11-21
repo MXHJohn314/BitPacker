@@ -8,6 +8,4 @@ import java.util.Map;
 /**
  * @param <T>  An object of type `T` is considered to be `BitPackable`  if it implements `BitPackReadable` T and `BitPackWriteable T>.
  */
-public interface BitPackable<T> extends  BitPackReadable<T>, BitPackWriteable<T> {
-	List<Map.Entry<T, Integer>> getPackList() throws ExecutionControl.NotImplementedException;
-}
+public interface BitPackable<T> extends  BitPackReadable<T>, BitPackWriteable<T> { }

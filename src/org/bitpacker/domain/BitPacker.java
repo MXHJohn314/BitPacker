@@ -1,6 +1,11 @@
 package org.bitpacker.domain;
 
-public class BitPacker extends BitAccessBase {
+import jdk.jshell.spi.ExecutionControl;
+import org.bitpacker.domain.models.Wompus;
+
+import java.util.List;
+
+public abstract class BitPacker extends BitAccessBase {
 	
 	public BitPacker(byte[] bytes, int bitTotal) {
 		super(bytes, bitTotal);
@@ -20,7 +25,11 @@ public class BitPacker extends BitAccessBase {
 	
 	public static String prettyPrint(byte[] result) {
 		StringBuilder sb = new StringBuilder();
-		BitPacker ba = new BitPacker(result, 8 * result.length);
+		BitPacker ba = new BitPacker(result, 8 * result.length) {
+			@Override public void dumpMany(List<Wompus> wompus) throws ExecutionControl.NotImplementedException {
+				
+			}
+		};
 		while(ba.hasNext()) {
 			sb.append(ba).append("\n");
 		}
@@ -79,4 +88,6 @@ public class BitPacker extends BitAccessBase {
 	@Override public int[] indices() {
 		return new int[]{this.currentByte, this.currentBit};
 	}
+	
+	public abstract void dumpMany(List<Wompus> wompus) throws ExecutionControl.NotImplementedException;
 }

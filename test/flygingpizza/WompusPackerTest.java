@@ -8,6 +8,8 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 class WompusPackerTest {
 	@BeforeEach
 	void setUp() {
@@ -17,29 +19,37 @@ class WompusPackerTest {
 	void tearDown() {
 	}
 	
-	@Test
-	void getPackList() throws ExecutionControl.NotImplementedException {
-		new WompusPacker().getPackList();
-	}
 	
 	@Test
 	void unpackBits() throws ExecutionControl.NotImplementedException {
-		new WompusPacker().unpackBits(new BitPacker(new byte[0], 0), 0);
+		new WompusPacker().loadBits(new BitPacker(new byte[0], 0) {
+			@Override public void dumpMany(List<Wompus> wompus) throws ExecutionControl.NotImplementedException {
+				
+			}
+		}, 0);
 	}
 	
 	@Test
 	void read() throws ExecutionControl.NotImplementedException {
-		new WompusPacker().read(new BitPacker(new byte[0], 0));
+		new WompusPacker().loadEntity(new BitPacker(new byte[0], 0) {
+			@Override public void dumpMany(List<Wompus> wompus) throws ExecutionControl.NotImplementedException {
+				
+			}
+		});
 	}
 	
 	@Test
 	void packBits() throws ExecutionControl.NotImplementedException {
-		new WompusPacker().packBits(0,0, new BitPacker(new byte[0], 0));
+		new WompusPacker().dumpBits(0,0, new BitPacker(new byte[0], 0) {
+			@Override public void dumpMany(List<Wompus> wompus) throws ExecutionControl.NotImplementedException {
+				
+			}
+		});
 	}
 	
 	@Test
 	void write() throws ExecutionControl.NotImplementedException {
-		new WompusPacker().write(new Wompus());
+		new WompusPacker().dumpOne(new Wompus());
 	}
 }
 /*
@@ -48,12 +58,12 @@ class WompusPackerTest {
 class WompusPackerTest {
 
 	@Test
-	void packBits() 
+	void dumpBits() 
 	
 	@Test
-	void read() 
+	void loadEntity() 
 	
 	@Test
-	void write() 
+	void dumpOne() 
 }
 */
