@@ -1,4 +1,4 @@
-package algo.galacticwafer;
+package algo.galacticwafer.v1;
 
 import java.util.Iterator;
 import java.util.List;
