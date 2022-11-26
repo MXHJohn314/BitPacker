@@ -1,6 +1,6 @@
-package models.nightshadeenterprise;
+package models.org.nightshadeenterprise;
 
-import models.flygingpizza.Point;
+import models.org.flygingpizza.SmooBit;
 
 import java.util.List;
 import java.util.Map;
@@ -25,11 +25,11 @@ public class Wompus {
 	/**
 	 * 2 14-bit packs for a point
 	 * */
-	public Point center;
+	public SmooBit center;
 	/**
 	 * 8 14-bit packs for 4 points
 	 * */
-	public Point[] bounds;
+	public SmooBit[] bounds;
 	/**
 	 * It takes 1 bit to represent a boolean
 	 * */
@@ -43,7 +43,7 @@ public class Wompus {
 	 * @param name a Wompus' birth name.
 	 * @param id a Wompus' state-issued ID number as a string.
 	 */
-	public Wompus(Point[] bounds, Point center, String name, String id) {
+	public Wompus(SmooBit[] bounds, SmooBit center, String name, String id) {
 		this.name = name;
 		this.center = center;
 		this.bounds = bounds;
@@ -57,12 +57,12 @@ public class Wompus {
 	 */
 	public Wompus() {
 		this.angle = R.nextInt(360);
-		this.center = new Point(R.nextInt(20001) + 1, R.nextInt(20001) + 1);
-		this.bounds = new Point[] {
-		 new Point(R.nextInt(20001) + 1, R.nextInt(20001) + 1),
-		 new Point(R.nextInt(20001) + 1, R.nextInt(20001) + 1),
-		 new Point(R.nextInt(20001) + 1, R.nextInt(20001) + 1),
-		 new Point(R.nextInt(20001) + 1, R.nextInt(20001) + 1),
+		this.center = new SmooBit(R.nextInt(20001) + 1, R.nextInt(20001) + 1);
+		this.bounds = new SmooBit[] {
+		 new SmooBit(R.nextInt(20001) + 1, R.nextInt(20001) + 1),
+		 new SmooBit(R.nextInt(20001) + 1, R.nextInt(20001) + 1),
+		 new SmooBit(R.nextInt(20001) + 1, R.nextInt(20001) + 1),
+		 new SmooBit(R.nextInt(20001) + 1, R.nextInt(20001) + 1),
 		 };
 		this.name = R.ints(22).toString();
 		this.id = R.ints(22).toString();
