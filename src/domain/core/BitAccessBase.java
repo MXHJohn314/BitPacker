@@ -62,7 +62,7 @@ public abstract class BitAccessBase implements BitAccessible {
 		return "" + border + "\n" + mid + border;
 	}
 	
-	@Override public String printByte(int readByte, int readBit, int writeByte, int writeBit) {
+	@Override public String printByte(int readByte, int readBit, igit rm –cached -r nt writeByte, int writeBit) {
 		return "READ[" +
 		 readByte + "," +
 		 readBit + "]->(" + getBytes()[readByte] + ")->" + getBit(readByte,
