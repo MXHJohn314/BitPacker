@@ -1,3 +1,4 @@
+/*
 package domain.packing;
 
 import domain.accessing.BitAccess;
@@ -8,3 +9,4 @@ public interface BitPackWriteable<T> {
 	
 	void write(T model);
 }
+*/

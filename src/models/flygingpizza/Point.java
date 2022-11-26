@@ -1,4 +1,4 @@
-package models;
+package models.flygingpizza;
 
 public class Point {
 	public int left;
