@@ -1,6 +1,5 @@
 package example;
 
-import algo.galacticwafer.v2.PackInfoIndex;
 import domain.core.PackDescribable;
 
 

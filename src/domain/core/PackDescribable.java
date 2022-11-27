@@ -1,6 +1,6 @@
 package domain.core;
 
-import algo.galacticwafer.v2.PackInfoIndex;
+import example.PackInfoIndex;
 
 import java.util.Map;
 
