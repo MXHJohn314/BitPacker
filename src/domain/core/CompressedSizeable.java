@@ -1,7 +1,5 @@
 package domain.core;
 
-import java.util.List;
-
 /**
  * @param <T> Some type that is PackDescribable.
  */
@@ -17,5 +15,5 @@ public interface CompressedSizeable<T> {
 	 * @param bytes the bytes to unpack.
 	 * @return the unpacked version of the bytes.
 	 */
-	byte[] unpack(List<Integer> packSizes, byte[] bytes);
+	byte[] unpack(byte[] bytes);
 }
