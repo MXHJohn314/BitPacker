@@ -99,12 +99,13 @@ class BitBuffer {
 				return output;
 			}
 		};
-		var nums = buff.unpack(List.of(3, 3, 3, 3),  buff.pack(new byte[] {
+		byte[] bytes = {
 		 (byte)0b0_001,
 		 (byte)0b0_011,
 		 (byte)0b0_100,
 		 (byte)0b0_010
-		}));
+		};
+		var nums = buff.unpack(List.of(3, 3, 3, 3),  buff.pack(bytes));
 		System.out.println(Arrays.toString(nums));
 	}
 }
