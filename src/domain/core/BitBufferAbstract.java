@@ -10,10 +10,9 @@ public abstract class BitBufferAbstract extends BitAccessBase implements Compres
 	protected int sizeInBits;
 	
 	/**
-	 * @param packJob The list of args to complete the pack job with.
-	 */
+     */
 
-	public BitBufferAbstract(List<PackDescribable> packJob) {
+	public BitBufferAbstract() {
 		super();
 		this.bytes = bytes;
 	}
