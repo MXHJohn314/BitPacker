@@ -23,19 +23,17 @@ public class Wompus {
 	public String name;
 	String id;
 	/**
-	 * 2 14-bit packs for a point
+	 * 4*7-bit packs for a point
 	 * */
 	public SmooBit center;
 	/**
-	 * 8 14-bit packs for 4 points
+	 * 16*7-bit packs for 4 points
 	 * */
 	public SmooBit[] bounds;
 	/**
-	 * It takes 1 bit to represent a boolean
+	 * 1-bit to represent a boolean
 	 * */
 	public int angle;
-	/*log(2,360)+1=9*/
-	List<Map.Entry<Integer, Integer>> packList = List.of();
 	
 	/**
 	 * @param bounds the bounds of a Wompus.

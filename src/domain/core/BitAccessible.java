@@ -60,4 +60,3 @@ interface BitAccessible {
 	
 	String printBuffer(byte[] bytes);
 }
-

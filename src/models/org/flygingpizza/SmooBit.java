@@ -21,5 +21,4 @@ public class SmooBit {
 		this.left = left;
 		this.right = right;
 	}
-	
 }
