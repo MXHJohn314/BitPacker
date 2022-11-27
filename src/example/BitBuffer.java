@@ -3,6 +3,11 @@ package example;
 import domain.core.BitBufferAbstract;
 import domain.core.PackDescribable;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -15,14 +20,14 @@ class BitBuffer {
 	/**
 	 * @param args N/A
 	 */
-	public static void main(String[] args) {
-		List<PackDescribable> list = List.of(
-		 new BitPack(4, 8),
-		 new BitPack(4, 8),
-		 new BitPack(4, 8),
-		 new BitPack(4, 8)
-		);
-		BitBufferAbstract buff = new BitBufferAbstract(list) {
+	public static void main(String[] args) throws IOException {
+//		List<PackDescribable> list = List.of(
+//		 new BitPack(4, 8),
+//		 new BitPack(4, 8),
+//		 new BitPack(4, 8),
+//		 new BitPack(4, 8)
+//		);
+		BitBufferAbstract buff = new BitBufferAbstract() {
 			private StringBuilder bin;
 			private String binary;
 			
@@ -59,7 +64,7 @@ class BitBuffer {
 				int index1 = doMin ? Math.min(index, binary.length()) : index;
 				String temp = binary.substring(0, index1);
 				binary = binary.substring(index1);
-				return temp;
+				return temp.isEmpty() ? "0" : temp;
 			}
 			
 			/**
@@ -101,12 +106,29 @@ class BitBuffer {
 			}
 		};
 		byte[] bytes = {
-		 (byte)0b0_001,
-		 (byte)0b0_011,
-		 (byte)0b0_100,
-		 (byte)0b0_010
+		 (byte)0b0_0111000, //56
+		 (byte)0b0_0101010, //46
+		 (byte)0b0_10, //2
+		 (byte)0b0_01101 //13
 		};
-		var nums = buff.unpack(List.of(3, 3, 3, 3),  buff.pack(bytes));
-		System.out.println(Arrays.toString(nums));
+		/**
+//		 * Step 1) Run the pack function
+//		 * Step 2) Take the output and write to a file
+//		 * Step 3) Read raw bytes from the file with no encoding into a byte array
+//		 * Step 4) Use as input for unpacking function
+//		 * Step 5) Check that the output from unpack is the same as initial input from pack
+//		 */
+		byte[] bytes1 = buff.pack(bytes);
+		String fileName = args[0];
+		Files.write(Paths.get(fileName), bytes1);
+
+		Path path = Paths.get("byte_array.malc");
+		byte[] bytes2 = Files.readAllBytes(path);
+
+		byte[] unpackOutput = buff.unpack(List.of(6, 6, 2, 4), bytes2);
+		for (byte b : unpackOutput) {
+			System.out.println(b);
+		}
+
 	}
 }
