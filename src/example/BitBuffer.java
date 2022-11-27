@@ -1,6 +1,7 @@
-package domain.core;
+package example;
 
-import algo.galacticwafer.v2.BitPack;
+import domain.core.BitBufferAbstract;
+import domain.core.PackDescribable;
 
 import java.util.ArrayList;
 import java.util.Arrays;

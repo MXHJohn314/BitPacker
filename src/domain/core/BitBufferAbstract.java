@@ -1,8 +1,5 @@
 package domain.core;
 
-import algo.galacticwafer.v2.BitPack;
-
-import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
