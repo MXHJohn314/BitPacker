@@ -7,7 +7,7 @@ import jdk.jshell.spi.ExecutionControl;
  * sub-arrays (bit packs) of a byte[].
  * This functionality allows the reclaiming of bits wasted due to restrictions on the domain
  * values for an object's member.
- * Bit packs can be of any unpackedSize integer on the interval [0, ).
+ * Bit packs can be of any unpackedCount integer on the interval [0, ).
  * The class stores data (as a byte array) in either compressed or uncompressed format via calls
  * to pack() or unpack() respectively.
  * The data must have an accompanying {@code packingOrder},  a list of key value pairs
@@ -38,7 +38,7 @@ interface BitAccessible {
 	/**
 	 * @return The byte array which this class manipulates internally.
 	 */
-	byte[] getBytes();
+	byte[] getValues();
 	
 	void setBytes(byte[] bytes);
 	
