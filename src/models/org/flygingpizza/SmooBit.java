@@ -1,5 +1,7 @@
 package models.org.flygingpizza;
 
+import java.util.Objects;
+
 /**
  * A SmooBit is the unit measurement of a Smoo.
  */
@@ -20,5 +22,19 @@ public class SmooBit {
 	public SmooBit(int left, int right) {
 		this.left = left;
 		this.right = right;
+	}
+	
+	@Override public boolean equals(Object o) {
+		if(this == o) {
+			return true;
+		}
+		if(!( o instanceof SmooBit smooBit )) {
+			return false;
+		}
+		return left == smooBit.left && right == smooBit.right;
+	}
+	
+	@Override public int hashCode() {
+		return Objects.hash(left, right);
 	}
 }
